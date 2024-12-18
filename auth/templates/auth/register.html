@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+<body>
+
+    <h1>Cadastrar Usuários</h1>
+    <form action="{{url_for('auth.register')}}" method="post">
+        <label for="email">Email</label>
+        <input type="email" placeholder="Email" name="email">
+        <label for="Nome">Nome</label>
+        <input type="text" placeholder="Nome" name='nome'>
+        <label for="senha">Senha</label>
+        <input type="password" placeholder="Senha" name="senha">
+        <button>Enviar</button>
+    </form>
+    
+</body>
+</html>

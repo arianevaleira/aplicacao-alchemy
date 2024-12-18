@@ -1,0 +1,31 @@
+{% extends 'layout/base.html' %}
+{% block title %}Empréstimos{% endblock %}
+{% block content %}
+<h1>Registrar Empréstimo</h1>
+<form method="POST">
+    <label>Usuário:</label>
+    <select name="user_id" required>
+        {% for user in users %}
+            <option value="{{ user.id }}">{{ user.nome }}</option>
+        {% endfor %}
+    </select>
+    <label>Livro:</label>
+    <select name="book_id" required>
+        {% for book in books %}
+            <option value="{{ book.id }}">{{ book.nome }}</option>
+        {% endfor %}
+    </select>
+    <label>Data de Devolução:</label>
+    <input type="date" name="data_devolucao" required>
+    <button type="submit">Registrar</button>
+</form>
+<hr>
+<h2>Lista de Empréstimos</h2>
+<ul>
+    {% for emprestimo in emprestimos %}
+        <li>
+            {{ emprestimo.user.nome }} pegou "{{ emprestimo.book.nome }}" - Devolver até {{ emprestimo.data_devolucao.strftime('%d/%m/%Y') }}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

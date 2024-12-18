@@ -1,0 +1,23 @@
+{% macro nav(page) %}
+<div class="header">
+    <nav>
+        <div class="title">
+            <h1>{{ page }}</h1>
+        </div>
+        <ul>
+            <li>
+                <a href="{{ url_for('users.index') }}">Usuários</a>
+            </li>
+            <li>
+                <a href="{{ url_for('books.index') }}">Livros</a>
+            </li>
+            <li>
+                <a href="{{ url_for('emprestimo.index') }}">Empréstimos</a>
+            </li>
+            <li>
+                <a href="{{ url_for('auth.logout') }}">Logout</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+{% endmacro %}
